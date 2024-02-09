@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SymbolReveal-Spin
+  m_Controller: {fileID: 9100000, guid: 9fcdfaf5ce5d20446bb73c7e89e6e642, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 168f17dea79db3944bae22a1d029e65f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 63072222c84345e49a0d1b3c32d0411f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bde4a2b972814b64daed8fce56f88281, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 83df732dd5b865c44abe8cdfea294f9b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 93779cf3413c18b45a677493ed30c2ff, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 194a9ea39c093c84283cbe0c09efa6e1, type: 2}
