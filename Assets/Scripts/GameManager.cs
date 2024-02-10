@@ -74,12 +74,12 @@ public class GameManager : MonoBehaviour
 
         _instance = this;
 
-        CurrentDenomination = CurrentMath.BaseDenomination;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        CurrentDenomination = CurrentMath.BaseDenomination;
         symbolRevealerController = GameObject.FindObjectOfType<GameSymbolRevealerController>();
     }
 
