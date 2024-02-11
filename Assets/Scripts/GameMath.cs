@@ -9,6 +9,7 @@ public abstract class GameMath : ScriptableObject
 {
     public uint NumRows;
     public uint NumColumns;
+    public uint TotalSymbols { get => NumRows * NumColumns; }
     public bool AllowFreePlaysInFreePlays;
     public int BaseDenomination;
 

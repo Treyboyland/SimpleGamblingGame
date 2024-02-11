@@ -11,6 +11,14 @@ public class GameSymbolRevealerController : MonoBehaviour
     [SerializeField]
     List<GameSymbolRevealer> symbolRevealers;
 
+    [SerializeField]
+    bool delayedReveal;
+
+    [SerializeField]
+    float secondsBetweenReveals;
+
+    bool isRevealing = false;
+
     public bool AreAllRevealed()
     {
         return symbolRevealers.All(x => x.IsRevealed);
@@ -23,10 +31,30 @@ public class GameSymbolRevealerController : MonoBehaviour
 
     public void RevealSymbols()
     {
+        if (!delayedReveal)
+        {
+            foreach (var symbol in symbolRevealers)
+            {
+                symbol.RevealSymbol();
+            }
+        }
+        else if (!isRevealing)
+        {
+            StartCoroutine(DelayedReveal());
+        }
+
+    }
+
+
+    IEnumerator DelayedReveal()
+    {
+        isRevealing = true;
         foreach (var symbol in symbolRevealers)
         {
             symbol.RevealSymbol();
+            yield return new WaitForSeconds(secondsBetweenReveals);
         }
+        isRevealing = false;
     }
 
     public void HideSymbols()

@@ -5,14 +5,16 @@ using UnityEngine;
 public class GameSymbolRevealerAnimation : GameSymbolRevealer
 {
     [SerializeField]
-    Animator animator;
+    protected Animator animator;
 
-    const string REVEALED_STATE = "SymbolReveal-Revealed";
-    const string HIDDEN_STATE = "SymbolReveal-Hidden";
+    protected const string REVEALED_STATE = "SymbolReveal-Revealed";
+    protected const string HIDDEN_STATE = "SymbolReveal-Hidden";
 
-    const string REVEAL_TRIGGER = "Reveal";
+    protected const string ANIMATING_STATE = "SymbolReveal-Animation";
 
-    const string HIDE_TRIGGER = "Hide";
+    protected const string REVEAL_TRIGGER = "Reveal";
+
+    protected const string HIDE_TRIGGER = "Hide";
 
     public override bool IsRevealed { get => animator.GetCurrentAnimatorStateInfo(0).IsName(REVEALED_STATE); set {/*Nothing*/} }
 
@@ -20,7 +22,7 @@ public class GameSymbolRevealerAnimation : GameSymbolRevealer
 
     public override void RevealSymbol()
     {
-        if (!IsRevealed)
+        if (!IsRevealed && !animator.GetCurrentAnimatorStateInfo(0).IsName(ANIMATING_STATE))
         {
             animator.SetTrigger(REVEAL_TRIGGER);
         }
