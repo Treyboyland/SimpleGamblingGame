@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class CurrentBetUI : MonoBehaviour
 {
+    [SerializeField]
+    CashTextUI betText;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        betText.SetCash(GameManager.Manager.CurrentDenomination);
     }
 }

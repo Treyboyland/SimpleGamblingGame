@@ -124,4 +124,144 @@ public static class HelperFunctions
 
         return toReturn;
     }
+
+    /// <summary>
+    /// For each item in the list, returns the indices of the longest consecutive portion
+    /// </summary>
+    /// <param name="list"></param>
+    /// <typeparam name="T"></typeparam>
+    /// <returns></returns>
+    public static Dictionary<T, List<int>> GetMaxConsecutiveIndices<T>(this List<T> list, List<T> wildItems, bool startLeft)
+    {
+        Dictionary<T, List<int>> count = new Dictionary<T, List<int>>();
+        if (list.Count == 0)
+        {
+            return count;
+        }
+
+        var uniqueitems = list.Distinct().ToList();
+
+        //TODO: This is inefficient, but it reads easier to me...
+        foreach (var item in uniqueitems)
+        {
+            if (wildItems.Contains(item))
+            {
+                //NOTE: We don't count wilds individually, which may be a problem
+                continue;
+            }
+            int itemCount = 0;
+            int max = int.MinValue;
+            List<int> indices = new List<int>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Equals(item) || wildItems.Contains(list[i]))
+                {
+                    indices.Add(i);
+                    itemCount++;
+                }
+                else
+                {
+                    if (itemCount > max)
+                    {
+                        max = itemCount;
+                        if (!count.ContainsKey(item))
+                        {
+                            count.Add(item, indices);
+                        }
+                        else
+                        {
+                            count[item] = indices;
+                        }
+                    }
+                    itemCount = 0;
+                    indices = new List<int>();
+                    if (startLeft)
+                    {
+                        return count;
+                    }
+                }
+            }
+            if (itemCount > max)
+            {
+                if (!count.ContainsKey(item))
+                {
+                    count.Add(item, indices);
+                }
+                else
+                {
+                    count[item] = indices;
+                }
+            }
+        }
+
+
+        /*
+        T last = default(T);
+        List<int> indices = new List<int>();
+        for (int i = 0; i < list.Count; i++)
+        {
+            //If first item, add it
+            if (i == 0)
+            {
+                last = list[i];
+                indices.Add(i);
+                if (!count.ContainsKey(last))
+                {
+                    count.Add(last, indices);
+                }
+            }
+            //If item matches last, add to list
+            else if (list[i].Equals(last))
+            {
+                indices.Add(i);
+                if (!count.ContainsKey(last))
+                {
+                    count.Add(last, indices);
+                }
+                if (count[last].Count < indices.Count)
+                {
+                    count[last] = indices;
+                }
+            }
+            //If the last item is wild, set last to this non-wild value, and add to list
+            else if (wildItems.Contains(last))
+            {
+                last = list[i];
+                indices.Add(i);
+                if (!count.ContainsKey(last))
+                {
+                    count.Add(last, indices);
+                }
+                else if (count[last].Count < indices.Count)
+                {
+                    count[last] = indices;
+                }
+            }
+            //If this item is wild, previous is not and should remain last
+            else if (wildItems.Contains(list[i]))
+            {
+                indices.Add(i);
+                if (!count.ContainsKey(last))
+                {
+                    count.Add(last, indices);
+                }
+                else if (count[last].Count < indices.Count)
+                {
+                    count[last] = indices;
+                }
+            }
+            else
+            {
+                indices = new List<int>();
+                indices.Add(i);
+                last = list[i];
+                if (!count.ContainsKey(last))
+                {
+                    count.Add(last, indices);
+                }
+            }
+        }*/
+
+        return count;
+    }
 }

@@ -18,6 +18,18 @@ public class SymbolData : ScriptableObject
     public Color SymbolColor = Color.white;
     public RuntimeAnimatorController SymbolAnimations;
     public List<WinAmountCount> WinAmounts;
+
+    /// <summary>
+    /// True if symbol replaces others
+    /// </summary>
+    [Tooltip("If wild, this symbol can replace another in a line, or add to a scatter. Should not itself have win amounts")]
+    public bool IsWild;
+    /// <summary>
+    /// Max number of this symbol on a ticket, if non-zero
+    /// </summary>
+    [Tooltip("If greater than zero, will limit count of this symbol on the ticket")]
+    public int MaxCount;
+
     /// <summary>
     /// Weight of this symbol compared to other symbols. Should be non-zero
     /// </summary>
@@ -26,7 +38,18 @@ public class SymbolData : ScriptableObject
 
     public bool HasWinCount(int count, out WinAmountCount winCount)
     {
-        winCount = WinAmounts.Where(x => x.Count == count).FirstOrDefault();
+        var maxCount = WinAmounts.Max(x => x.Count);
+        var maxWin = WinAmounts.Where(x => x.Count == maxCount).First();
+        if (count >= maxWin.Count)
+        {
+            //Not sure if this is good for scatters...(e.g. 6 on ticket -> 5 vs 3 and 3)
+            winCount = maxWin;
+        }
+        else
+        {
+            winCount = WinAmounts.Where(x => x.Count == count).FirstOrDefault();
+        }
+
         return winCount != default(WinAmountCount);
     }
 }

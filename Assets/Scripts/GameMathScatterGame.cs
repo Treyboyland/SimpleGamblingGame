@@ -8,30 +8,6 @@ public class GameMathScatterGame : GameMath
 {
     public int MaxCount;
 
-    public override List<TicketData> GetTickets(int seed, int denomination)
-    {
-        int multiplier = denomination / BaseDenomination;
-        List<TicketData> tickets = new List<TicketData>();
-
-        random = new System.Random(seed);
-        var ticket = ScoreTicket(GenerateSymbols(false), multiplier);
-        ticket.Denomination = denomination;
-        tickets.Add(ticket);
-        int totalFreePlays = ticket.FreePlaysAwarded;
-
-        while (totalFreePlays > 0)
-        {
-            totalFreePlays--;
-            var freePlayTicket = ScoreTicket(GenerateSymbols(true), multiplier);
-            freePlayTicket.Denomination = denomination;
-            totalFreePlays += freePlayTicket.FreePlaysAwarded;
-            ticket.WinTotal += freePlayTicket.WinTotal;
-            tickets.Add(freePlayTicket);
-        }
-
-        return tickets;
-    }
-
     /// <summary>
     /// Creates and Scores a ticket based upon the given symbols. NOTE: Seed should be set after this method
     /// </summary>
@@ -46,6 +22,12 @@ public class GameMathScatterGame : GameMath
 
         foreach (var symbol in Symbols)
         {
+            if (symbol.IsWild)
+            {
+                //Skipping counting wild symbols
+                continue;
+            }
+
             var symId = GetSymbolIndex(symbol);
             var symCount = allSymbolCounts.GetCount(symId);
             if (symbol.HasWinCount(symCount, out WinAmountCount winCountSym))
@@ -90,6 +72,7 @@ public class GameMathScatterGame : GameMath
         {
             //Limiting occurence of symbols on ticket. NOTE: Issue with SYM*MAX_COUNT < DIMENSIONS
             List<int> possible = Symbols.Where(sym =>
+                (sym.MaxCount <= 0 || toReturn.GetCountOfItem(GetSymbolIndex(sym)) < sym.MaxCount) &&
                 (GetSymbolCount(sym, toReturn) < MaxCount || MaxCount < 1)
                 && (!isFreePlay || (isFreePlay && sym.IsAllowedInFreePlay)))
                 .Select(sym => GetSymbolIndex(sym)).ToList();

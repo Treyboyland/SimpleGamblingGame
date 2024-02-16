@@ -12,4 +12,9 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
     }
+
+    public void LoadGivenScene(string otherSceneToLoad)
+    {
+        SceneManager.LoadScene(otherSceneToLoad, LoadSceneMode.Single);
+    }
 }

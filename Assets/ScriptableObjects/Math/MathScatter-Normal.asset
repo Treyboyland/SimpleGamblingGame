@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8957ad8e276e2b543a15abf93d4dcb40, type: 3}
   m_Name: MathScatter-Normal
   m_EditorClassIdentifier: 
+  gameName: Scatter Block Game
   NumRows: 3
   NumColumns: 5
   AllowFreePlaysInFreePlays: 0

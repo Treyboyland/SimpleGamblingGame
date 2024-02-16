@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8957ad8e276e2b543a15abf93d4dcb40, type: 3}
+  m_Name: MathScatter-NormalSpin
+  m_EditorClassIdentifier: 
+  gameName: The Wheel
+  NumRows: 3
+  NumColumns: 5
+  AllowFreePlaysInFreePlays: 0
+  BaseDenomination: 25
+  AllDenominations: 190000003200000064000000c8000000
+  Symbols:
+  - {fileID: 11400000, guid: db404cd8e46b384488481f53217ec4f8, type: 2}
+  - {fileID: 11400000, guid: ac6410828e3a0d147b61dc81a3e35b3d, type: 2}
+  - {fileID: 11400000, guid: 628e525fc63f84048b660ea42a24daf6, type: 2}
+  - {fileID: 11400000, guid: 56e8e9003915fce49abb6fc448f4cbb3, type: 2}
+  - {fileID: 11400000, guid: 2664d236a93c2da45a43a0a40238ebba, type: 2}
+  - {fileID: 11400000, guid: 65a68f4adf49f134e9bae668d47acdb7, type: 2}
+  - {fileID: 11400000, guid: 49021714c5db4c94fb6d5511b5d84db9, type: 2}
+  - {fileID: 11400000, guid: cab8cb91aa1d56947a60874b0e9b24c3, type: 2}
+  - {fileID: 11400000, guid: db07d76aa41f7bb40b017b724f5845f4, type: 2}
+  - {fileID: 11400000, guid: afe4a0ab64032254bb57ab00c1dc1082, type: 2}
+  - {fileID: 11400000, guid: 5dbda5599dd70704788be6d9c87d3ee2, type: 2}
+  - {fileID: 11400000, guid: 160207007f8bf044a8d3828f8dd106fd, type: 2}
+  - {fileID: 11400000, guid: f93a6a7c509ae5b4b9473ecb2a396e4f, type: 2}
+  MaxCount: 5
