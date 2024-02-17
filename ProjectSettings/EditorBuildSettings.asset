@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Game_Wheel.unity
     guid: 465fe5f4c8ac07b4b8be2378c6469c4f
+  - enabled: 1
+    path: Assets/_Scenes/Game_Jungle.unity
+    guid: d77026590a905df4e992bbe19c807d6f
   m_configObjects: {}

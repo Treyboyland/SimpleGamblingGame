@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class BuyTicketButtonUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    GameEvent playButtonSound;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    GameEvent normalSound;
+
+    public void PlaySound()
     {
-        
+        if (!GameManager.Manager.HasTicket)
+        {
+            playButtonSound.Invoke();
+        }
+        else
+        {
+            normalSound.Invoke();
+        }
     }
 }
