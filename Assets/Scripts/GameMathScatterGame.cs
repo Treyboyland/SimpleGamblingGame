@@ -38,6 +38,12 @@ public class GameMathScatterGame : GameMath
                     ticket.HasFreePlays = true;
                     ticket.FreePlaysAwarded += winCountSym.WinAmount;
                 }
+                else if (winCountSym.IsBonusGame)
+                {
+                    ticket.HasBonusGame = true;
+                    int chosenIndex = random.Next(0, winCountSym.BonusAmounts.Count);
+                    ticket.WinTotal += (int)(winCountSym.BonusAmounts[chosenIndex] * multiplier);
+                }
                 else
                 {
                     ticket.WinTotal += (int)(winCountSym.WinAmount * multiplier);

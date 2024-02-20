@@ -5,6 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    GameDeal gameDeal;
+
+    [SerializeField]
+    TicketType noneType;
+
+    public TicketType CurrentTicketType;
+
+    [Header("Events")]
+
+    [SerializeField]
     GameEventTicket onNewTicket;
 
     [SerializeField]
@@ -56,6 +66,8 @@ public class GameManager : MonoBehaviour
 
     public bool HasTicket { get; set; } = false;
 
+    public bool UseDeal { get; set; } = false;
+
     List<TicketData> gameTickets = new List<TicketData>();
 
     TicketData mainTicket;
@@ -91,34 +103,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void BuyTicket(TicketType ticketType)
+    {
+        BuyTicket(gameDeal.GetSeedOfType(CurrentMath, ticketType));
+    }
+
     public void BuyTicket()
     {
-        FindReference();
-        if (!HasTicket && gameTickets.Count == 0) //Balance Check??
+        if (CurrentTicketType != noneType && !UseDeal)
         {
-            HasTicket = true;
-            Balance -= currentDenomination;
-            //TODO: Deal???
-            gameTickets = CurrentMath.GetTickets(Random.Range(int.MinValue, int.MaxValue), currentDenomination);
-            if (gameTickets[0].WinTotal != 0)
-            {
-                Debug.LogWarning(gameTickets[0]);
-            }
-            mainTicket = gameTickets[0];
-            currentTicket = gameTickets[0];
-            gameTickets.RemoveAt(0);
-            onNewTicket.Invoke(currentTicket);
-            onNewDisplay.Invoke(currentTicket);
+            BuyTicket(CurrentTicketType);
         }
-        else if (HasTicket && !symbolRevealerController.AreAllRevealed())
+        else 
         {
-            symbolRevealerController.RevealSymbols();
-        }
-        else if (HasTicket && gameTickets.Count != 0)
-        {
-            currentTicket = gameTickets[0];
-            gameTickets.RemoveAt(0);
-            onNewDisplay.Invoke(currentTicket);
+            BuyTicket(Random.Range(int.MinValue, int.MaxValue));
         }
     }
 
@@ -127,6 +125,7 @@ public class GameManager : MonoBehaviour
         FindReference();
         if (!HasTicket && gameTickets.Count == 0) //Balance Check??
         {
+            seed = UseDeal ? gameDeal.GetDealTicket(CurrentMath) : seed;
             HasTicket = true;
             Balance -= currentDenomination;
             //TODO: Deal???

@@ -6,6 +6,17 @@ using UnityEngine;
 
 public static class HelperFunctions
 {
+    public static void Shuffle<T>(this List<T> items)
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            int chosenIndex = UnityEngine.Random.Range(i, items.Count);
+            var temp = items[chosenIndex];
+            items[chosenIndex] = items[i];
+            items[i] = temp;
+        }
+    }
+
     public static T GetRandomItem<T>(this List<T> items, Func<T, int> weight, System.Random rand)
     {
         int totalWeight = items.Select(x => weight(x)).Sum(x => x);

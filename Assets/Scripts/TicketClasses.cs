@@ -26,7 +26,11 @@ public class WinAmountCount
     /// <summary>
     /// True if this should award a bonus feature
     /// </summary>
-    public bool IsBonusFeature;
+    public bool IsBonusGame;
+    /// <summary>
+    /// If this is a bonus feature, then this is the list of potential win amounts for this feature
+    /// </summary>
+    public List<int> BonusAmounts;
 }
 
 [Serializable]
@@ -73,6 +77,7 @@ public class TicketData
     public List<int> SymbolIds;
     public bool HasFreePlays;
     public int FreePlaysAwarded;
+    public bool HasBonusGame;
 
     public override string ToString()
     {

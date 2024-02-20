@@ -154,6 +154,7 @@ Transform:
   - {fileID: 2763272516059001385}
   - {fileID: 52566331484961345}
   - {fileID: 7910377743073245312}
+  - {fileID: 4808539161439609506}
   m_Father: {fileID: 3288656417885354453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2816221384266065763
@@ -346,6 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3288656417885354453}
   - component: {fileID: 8378396569575252213}
+  - component: {fileID: 6165820076218656469}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -381,9 +383,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a719faef014f1478142a2b16e1e9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameDeal: {fileID: 6165820076218656469}
+  noneType: {fileID: 11400000, guid: 1e8bd4574fb55924f86e4fc8fd86caee, type: 2}
+  CurrentTicketType: {fileID: 11400000, guid: 1e8bd4574fb55924f86e4fc8fd86caee, type: 2}
   onNewTicket: {fileID: 11400000, guid: fa65cb461c7f53f41acb3598de46f1c2, type: 2}
   onNewDisplay: {fileID: 11400000, guid: 7fec099036a29234badfea08cb0afb9b, type: 2}
   onBalanceChanged: {fileID: 11400000, guid: 0cdfc44225742c3428d85233c463d537, type: 2}
   onDenominationChanged: {fileID: 11400000, guid: f2f4abd0f048298458bd81fbdb30fcab, type: 2}
   onTicketComplete: {fileID: 11400000, guid: 1bd9165486b66b840841e7efa4fbbd8c, type: 2}
   CurrentMath: {fileID: 11400000, guid: df6f51c86fb4e4a4f9d3f11cda1497ef, type: 2}
+--- !u!114 &6165820076218656469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936533607243317510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47366cd60bdc84546979a8b0b59271bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allTickets:
+  - Math: {fileID: 11400000, guid: a1403efdd0645504f9c2d0566b1ede2e, type: 2}
+    Tickets: {fileID: 4900000, guid: f6b187d36d9c0174cb4008156c9b0aa8, type: 3}
+  allTicketTypes:
+  - {fileID: 11400000, guid: e4e377c35494d044c96120ea2e6cbc32, type: 2}
+  - {fileID: 11400000, guid: 670428b8feaf85b42af387aea3a804ab, type: 2}
+  - {fileID: 11400000, guid: b9f75f9cd35764e4b81dc7df6cbf1f28, type: 2}
+  - {fileID: 11400000, guid: 45df48ede1bf2e24ba01058e010c814b, type: 2}
+  - {fileID: 11400000, guid: 1e8bd4574fb55924f86e4fc8fd86caee, type: 2}
+  - {fileID: 11400000, guid: e4a3bf013d2eecf47a8228e869ff1787, type: 2}
+  - {fileID: 11400000, guid: f7b1682bdac7a474b8c8fc7705a18186, type: 2}
+  - {fileID: 11400000, guid: d551cbc1de3d3b7408d4d05e43ad91cb, type: 2}
+  - {fileID: 11400000, guid: b388de4028ba01949aad164cc57fd925, type: 2}
+  any: {fileID: 11400000, guid: e4e377c35494d044c96120ea2e6cbc32, type: 2}
+--- !u!1 &7739850083074403248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4808539161439609506}
+  - component: {fileID: 7608161419008806736}
+  m_Layer: 0
+  m_Name: OnTicketTypeChanged
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4808539161439609506
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739850083074403248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 280880703628365506}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7608161419008806736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7739850083074403248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443f2e56640b1564eb2a7b64e5092485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 872bdcdf81643134886376dfc0d31aad, type: 2}
+  OnEventHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8378396569575252213}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: set_UseDeal
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
