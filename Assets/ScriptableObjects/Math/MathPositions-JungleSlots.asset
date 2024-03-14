@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: MathPositions-JungleSlots
   m_EditorClassIdentifier: 
   gameName: Jungle Slots
+  gameType: {fileID: 11400000, guid: 8b134538ce4d9b04e815924dc67956fa, type: 2}
+  gameDescription: 'The game is a 5 column, 3 row game with win lines. Win lines
+    must start from the left most column. There is a wild symbol, which can stand
+    in place of other symbols on a win line
+
+
+    Art by danitorres567: https://opengameart.org/content/jungle-slot-assets '
   NumRows: 3
   NumColumns: 5
   AllowFreePlaysInFreePlays: 0

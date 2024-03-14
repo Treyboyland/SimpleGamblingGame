@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8957ad8e276e2b543a15abf93d4dcb40, type: 3}
+  m_Name: MathScatter-BlockBucks
+  m_EditorClassIdentifier: 
+  gameName: Block Bucks
+  gameType: {fileID: 11400000, guid: 4262fb36040a6b24ab15432e62083ebb, type: 2}
+  gameDescription: The game is a 5 column, 3 row scatter game.
+  NumRows: 3
+  NumColumns: 5
+  AllowFreePlaysInFreePlays: 0
+  BaseDenomination: 25
+  AllDenominations: 190000003200000064000000c8000000
+  Symbols:
+  - {fileID: 11400000, guid: 1ab6451f9b4818a4683e300c1fb8309c, type: 2}
+  - {fileID: 11400000, guid: 1e25d9aa7a875a34ea302d04a258f15b, type: 2}
+  - {fileID: 11400000, guid: f955086afd9d78b4baf7410b6403259b, type: 2}
+  - {fileID: 11400000, guid: ed119c07e5d310348899d337be580197, type: 2}
+  - {fileID: 11400000, guid: 70f5fafcb3d4a8c4e96c91803231b6cf, type: 2}
+  - {fileID: 11400000, guid: 0128ec9d766cbeb4aa5afecac4670100, type: 2}
+  - {fileID: 11400000, guid: 16e56ad467a2dbc459cb1c832ef989fd, type: 2}
+  - {fileID: 11400000, guid: bdda009f0d9d7cd42ac6bd36621c74b9, type: 2}
+  MaxCount: 5

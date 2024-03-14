@@ -12,6 +12,17 @@ public abstract class GameMath : ScriptableObject
 
     public string GameName => gameName;
 
+    [SerializeField]
+    GameType gameType;
+
+    public GameType GameType => gameType;
+
+    [SerializeField]
+    [TextArea]
+    string gameDescription;
+
+    public string GameDescription => gameDescription;
+
     public uint NumRows;
     public uint NumColumns;
     public uint TotalSymbols { get => NumRows * NumColumns; }
@@ -98,6 +109,11 @@ public abstract class GameMath : ScriptableObject
         return toReturn;
     }
 
+    public int GetMultiplier(int denomination)
+    {
+        return denomination / BaseDenomination;
+    }
+
     /// <summary>
     /// Returns a list of indicies in the symbols list
     /// </summary>
@@ -126,8 +142,8 @@ public abstract class GameMath : ScriptableObject
                 (sym.MaxCount <= 0 || toReturn.GetCountOfItem(GetSymbolIndex(sym)) < sym.MaxCount) &&
                 (!isFreePlay || (isFreePlay && sym.IsAllowedInFreePlay)))
                 .Select(sym => GetSymbolIndex(sym)).ToList();
-        toReturn.Add(allowedSyms.GetRandomItem(indexToWeight, random));
-    }
+            toReturn.Add(allowedSyms.GetRandomItem(indexToWeight, random));
+        }
 
         return toReturn;
     }

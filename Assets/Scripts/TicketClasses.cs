@@ -13,23 +13,28 @@ public class WinAmountCount
     /// <summary>
     /// Win for this line
     /// </summary>
+    [Tooltip("Win for this line")]
     public int WinAmount;
     /// <summary>
     /// Count required for win
     /// </summary>
+    [Tooltip("Count required for win")]
     public uint Count;
     /// <summary>
     /// True if free play symbol, which implies that the win amount
     /// is a free play count
     /// </summary>
+    [Tooltip("True if free play symbol, which implies that the win amount is a free play count")]
     public bool IsFreePlay;
     /// <summary>
     /// True if this should award a bonus feature
     /// </summary>
+    [Tooltip("True if this should award a bonus feature")]
     public bool IsBonusGame;
     /// <summary>
     /// If this is a bonus feature, then this is the list of potential win amounts for this feature
     /// </summary>
+    [Tooltip("If this is a bonus feature, then this is the list of potential win amounts for this feature")]
     public List<int> BonusAmounts;
 }
 

@@ -137,6 +137,15 @@ public static class HelperFunctions
     }
 
     /// <summary>
+    /// Converts a value in pennies to a value in dollars
+    /// </summary>
+    /// <param name="pennies"></param>
+    public static string ToCash(this int pennies)
+    {
+        return string.Format("{0:C}", pennies / 100.0m);
+    }
+
+    /// <summary>
     /// For each item in the list, returns the indices of the longest consecutive portion
     /// </summary>
     /// <param name="list"></param>

@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80f10439d0554345985d69762021111, type: 3}
+  m_Name: MathPositions-AnimalMoolah
+  m_EditorClassIdentifier: 
+  gameName: Animal Moolah
+  gameType: {fileID: 11400000, guid: 8b134538ce4d9b04e815924dc67956fa, type: 2}
+  gameDescription: The game is a 5 column, 3 row game with win lines. Win lines can
+    start in any column.
+  NumRows: 3
+  NumColumns: 5
+  AllowFreePlaysInFreePlays: 0
+  BaseDenomination: 25
+  AllDenominations: 190000003200000064000000c8000000
+  Symbols:
+  - {fileID: 11400000, guid: 0d2d82ac9b52f8e4998f00fffb454ac3, type: 2}
+  - {fileID: 11400000, guid: 76329ec4419b62f4d954853bca28475f, type: 2}
+  - {fileID: 11400000, guid: d7f38427b55c6204cbf9455e6379dfbc, type: 2}
+  - {fileID: 11400000, guid: 9efe267a60366204dbcd9df04c24903f, type: 2}
+  - {fileID: 11400000, guid: c2971808b9c1a1f4fbfc098692386146, type: 2}
+  - {fileID: 11400000, guid: f0aebd82add7b194daa577b9778923c5, type: 2}
+  - {fileID: 11400000, guid: bd4c24c3c7d56814ab3acea5b02fce69, type: 2}
+  - {fileID: 11400000, guid: e6d802f2433835d4ea4b6ea63502330c, type: 2}
+  - {fileID: 11400000, guid: 4080c89b64e17cf44b6d07385db55a46, type: 2}
+  - {fileID: 11400000, guid: d7bfebd55933f884ca853556ee9832b3, type: 2}
+  - {fileID: 11400000, guid: 854aa4aece35f4f4e8b4a31abbe45ab2, type: 2}
+  - {fileID: 11400000, guid: 21122eeee29428f4aa7f251c00c9696b, type: 2}
+  - {fileID: 11400000, guid: eb6bd01ad5c04ed498b95dcc60673de7, type: 2}
+  mustStartOnLeft: 0
+  winLines:
+  - Indices: 0000000001000000020000000300000004000000
+  - Indices: 0500000006000000070000000800000009000000
+  - Indices: 0a0000000b0000000c0000000d0000000e000000
+  - Indices: 00000000060000000c0000000800000004000000
+  - Indices: 0a0000000600000002000000080000000e000000
+  - Indices: 0a000000060000000c000000080000000e000000
+  - Indices: 0000000006000000020000000800000004000000

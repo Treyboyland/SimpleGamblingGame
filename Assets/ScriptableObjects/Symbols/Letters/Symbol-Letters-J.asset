@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab87618150d66447958b666586fb688, type: 3}
+  m_Name: Symbol-Letters-J
+  m_EditorClassIdentifier: 
+  SymbolName: J
+  IsAllowedInFreePlay: 1
+  SymbolSprite: {fileID: 21300000, guid: d50d9f0937600b74c9d9486852316ceb, type: 3}
+  SymbolColor: {r: 1, g: 1, b: 1, a: 1}
+  SymbolAnimations: {fileID: 22100000, guid: f121af07f67a4a849a06c3ef856d6c49, type: 2}
+  WinAmounts:
+  - WinAmount: 2000
+    Count: 3
+    IsFreePlay: 0
+    IsBonusGame: 0
+    BonusAmounts: 
+  - WinAmount: 2500
+    Count: 4
+    IsFreePlay: 0
+    IsBonusGame: 0
+    BonusAmounts: 
+  - WinAmount: 3000
+    Count: 5
+    IsFreePlay: 0
+    IsBonusGame: 0
+    BonusAmounts: 
+  IsWild: 0
+  MaxCount: 0
+  Weight: 1

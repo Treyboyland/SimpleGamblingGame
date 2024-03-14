@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: MathScatter-NormalSpin
   m_EditorClassIdentifier: 
   gameName: The Wheel
+  gameType: {fileID: 11400000, guid: 4262fb36040a6b24ab15432e62083ebb, type: 2}
+  gameDescription: This is a scatter game. Symbols appear on a circle as opposed
+    to rows.
   NumRows: 3
   NumColumns: 5
   AllowFreePlaysInFreePlays: 0

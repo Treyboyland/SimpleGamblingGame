@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80f10439d0554345985d69762021111, type: 3}
+  m_Name: MathPositions-LuckyLetters
+  m_EditorClassIdentifier: 
+  gameName: Lucky Letters
+  gameType: {fileID: 11400000, guid: 8b134538ce4d9b04e815924dc67956fa, type: 2}
+  gameDescription: The game is a 5 column, 3 row game with win lines. Win lines are
+    only vertical or horizontal, and can start from any column.
+  NumRows: 3
+  NumColumns: 5
+  AllowFreePlaysInFreePlays: 0
+  BaseDenomination: 25
+  AllDenominations: 190000003200000064000000c8000000
+  Symbols:
+  - {fileID: 11400000, guid: f60feca0538936045884bd75a7475656, type: 2}
+  - {fileID: 11400000, guid: 4e5fa8d4b152c3d41b3be73deb428852, type: 2}
+  - {fileID: 11400000, guid: 349c740c5565dab418994f8db12d8837, type: 2}
+  - {fileID: 11400000, guid: ac8d0180358025f429563e9e520c760b, type: 2}
+  - {fileID: 11400000, guid: 285e0f7b5d458d849b652ac296f4831f, type: 2}
+  - {fileID: 11400000, guid: 1f356bd860dc7c343a5e058da147c240, type: 2}
+  - {fileID: 11400000, guid: f238475ab83748e49b218c75080f3c6d, type: 2}
+  - {fileID: 11400000, guid: 00e117bbdfb6bec45b2e7cfc4487f286, type: 2}
+  - {fileID: 11400000, guid: b50f7910dd1f10949aecc0ed8587aeee, type: 2}
+  - {fileID: 11400000, guid: 7c1fa4670c215544b8c6ebc05c99f073, type: 2}
+  - {fileID: 11400000, guid: 2ca94de706deddc439c479e7c368ee4a, type: 2}
+  - {fileID: 11400000, guid: 4cd2c9aa84b9bbb4ca7988145f45cdda, type: 2}
+  - {fileID: 11400000, guid: b05901fac68f82f4c9de861c2e1f482b, type: 2}
+  - {fileID: 11400000, guid: c414a64eb9a72414aa1ed5ee0287f69e, type: 2}
+  mustStartOnLeft: 0
+  winLines:
+  - Indices: 0000000001000000020000000300000004000000
+  - Indices: 0500000006000000070000000800000009000000
+  - Indices: 0a0000000b0000000c0000000d0000000e000000
+  - Indices: 00000000050000000a000000
+  - Indices: 01000000060000000b000000
+  - Indices: 02000000070000000c000000
+  - Indices: 03000000080000000d000000
+  - Indices: 04000000090000000e000000
